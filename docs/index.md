@@ -1,6 +1,6 @@
 # Welcome to Cheatsheets
 
-This site was made with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) based on [mkdocs.org](https://www.mkdocs.org) an hosted on [Github Pages](https://docs.github.com/en/pages)
+This site was made with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) based on [mkdocs.org](https://www.mkdocs.org) and hosted on [Github Pages](https://docs.github.com/en/pages)
 
 ## Set up Github Pages
 
