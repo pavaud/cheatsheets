@@ -6,7 +6,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     # - navigation.sections
-    - navigation.expand
+    # - navigation.expand
     - navigation.path
     # - toc.integrate
     - toc.follow
@@ -33,6 +33,9 @@ theme:
   icon:
     admonition:
       note: octicons/tag-16 
+# Repository
+repo_name: pavaud/cheatsheets
+repo_url: https://github.com/pavaud/cheatsheets
 
 # Extensions
 markdown_extensions:

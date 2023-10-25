@@ -2,7 +2,7 @@
 
 Upgrade `python` directly from the [Download page](https://www.python.org/downloads/)
 
-Verify the installation with the following command
+Verify installation with the following command
 
 ```bash
 python --version
