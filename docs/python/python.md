@@ -1,97 +1,14 @@
 # Python
 
-## Environment
----
-
-```bash
-# Upgrade python
-upgraded directly from the website : https://www.python.org/downloads/
-
-# upgrade pip:
-python -m pip install --upgrade pip
-
-pip install <package1> <package2> ...           # Installer un package
-pip freeze                                      # afficher les packages déjà existants
-
-pip list                                        # liste les packages installés sous forme agreable
-pip freeze                                      # liste les packages installés sous forme de fichier requirements.txt
-
-python -m site                                  # list the site-packages directories on the drive
-
-pip show package                                # show package info
-
-pip install requests==2.1.0                     # installer package avec version specifique
-pip install "requests>2.4.0,<2.6.0"             # installer pac kage avec version comprise
-pip install -r requirements.txt                 # installer les package lister par pip freeze dans requirements.txt
-   
-pip install venv                                # installer venv
-python -m venv <environment name>               # créer un environnement virtuel
-source env/Scripts/activate                     # activer environnement virtuel (env/Scripts/activate.bat Windows)
-                                                # (désactive l'environnement actuel s'il y en a un)
-    
-deactivate                                      # desactive l'environment actuel depuis nimporte quel dossier
-    
-rm -r env/                                      # suppression d'un environnement virtuel
- 
-requirements.txt                                # fichier qui liste les packages à installer pour un projet
-```
-
-**environment variables**
-```bash
-# Linux
-export PYTHONPATH=${PYTHONPATH}:${PWD}/src
-
-# Command Prompt
-set PYTHONPATH=%PYTHONPATH%;%CWD%\src
-
-# Powershell
-$env:PYTHONPATH="$env:PYTHONPATH;${PWD}\src"
-```
-### Pipenv
-
-Install pipenv
-```bash
-pip install pipenv --user
-```
-
-Create .venv (or put PIPENV_VENV_IN_PROJECT=1 into a .env file that pipenv will load when invoke)
-```bash
-mkdir .venv                                     # if .venv not created, it installs .venv in ~/.venv (or export PIPENV_VENV_IN_PROJECT=1)
-pipenv install [-r requirements.txt]            # if requirements.txt is not provided, install from Pipfile
-
-pipenv install --python=/path/to/python         # use a specific interpreter/version
-```
-
-Activate venv
-```bash
-pipenv shell
-```
-
-Install in prod or dev environment 
-place the package in the default or dev + defaults section of the Pipfile and Pipfile.lock
-```bash
-pipenv install <package> [--dev]
-```
-Generate a `requirements.txt` file (only default, with dev or only dev)
-```bash
-pipenv lock -r [--dev | --dev-only] > requirements.txt
-```
-
-Check for vulnerabilities in dependencies
-```bash
-pipenv check
-```
-
-
 ## Create an Executable
 
-### Install with python 2
-
+**Install with python 2**
 ```bash
 sudo apt-get install python-dev
 pip install cx_Freeze
 ```
-### Install with python 3
+
+**Install with python 3**
 
 - Download `cx_Freeze` library et extract
 - in `setup.py`, replace the following line:
@@ -112,7 +29,7 @@ setup.py build
 setup.py install
 ```
 
-### Program
+**Program**
 
 The name must be `setup.py`
 
@@ -128,7 +45,7 @@ setup(
 )
 ```
 
-### Build
+**Build**
 
 ```bash
 python setup.py build
@@ -181,7 +98,8 @@ import os
 FILE = os.path.realpath(os.path.join(os.path.dirname(__file__), '..','data', 'api_keys.txt'))
 ```
 
-**main structure**
+**Main Structure**
+
 ```python
 
 #!/usr/bin/env python3
@@ -253,10 +171,10 @@ if __name__ == "__main__":
 ```
 
 ## Create Packages
----
-Tout répertoire avec un fichier `__init__.py` est considéré comme un paquet Python
 
-Structure d'un package python (dans le même dossier que le programme):
+All directory with an `__init__.py` file is considered as a package.
+
+Structure of a python package (in the same directory as the said program):
 ```
 - nom_programme.py
 - nom_package/
@@ -270,32 +188,32 @@ Structure d'un package python (dans le même dossier que le programme):
 
 ### Operators
 
-| Symbole |     Opération    | Exemple           |
-|:-------:|:--------------:|:---------------:|
-|    +    |     Addition     | 6+4 renvoie 10    |
-|    -    |   Soustraction   | 6-4 renvoie 2     |
-|    *    |  Multiplication  | 6*4 renvoie 24    |
-|    /    |  Division réelle | 6/4 renvoie 1.5   |
-|    //   | Division entière | 6.0//4 renvoie 1  |
-|    **   |     Puissance    | 6**4 renvoie 1296 |
-|    %    |      Modulo      | 6 % 4 renvoie 2   |
+| Symbole | Opération        | Exemple           |
+|:-------:|------------------|-------------------|
+|    +    | Addition         | 6+4 returns 10    |
+|    -    | Substraction     | 6-4 returns 2     |
+|    *    | Multiplication   | 6*4 returns 24    |
+|    /    | Division         | 6/4 returns 1.5   |
+|    //   | Integer division | 6.0//4 returns 1  |
+|    **   | Power            | 6**4 returns 1296 |
+|    %    | Modulo           | 6 % 4 returns 2   |
 
 ### Assignation
 
- Symbole |     Opération   
-:--------:|:----------------:
-    +=   |     Addition    
-    -=   |   Soustraction  
-    *=   |  Multiplication 
-    /=   |  Division réelle
-   //=   | Division entière
-   **=   |     Puissance 
-    %=   |      Modulo     
+ Symbole | Opération            |
+:-------:|----------------------|
+    +=   | Addition             |
+    -=   | Substraction         |
+    *=   | Multiplication       |
+    /=   | Division             |
+   //=   | Integer division     |
+   **=   | Power                |
+    %=   | Modulo               |
 
 ### Comparison
 
 | Expression | Exemple | Signification                                |
-|:----------:|:------:|-----------------------------------------|
+|:----------:|:-------:|----------------------------------------------|
 | <          |  x < y  | Est-ce que x est strictement inférieur à y ? |
 | <=         |  x <= y | Est-ce que x inférieur ou égal à y ?         |
 | >          |  x > y  | Est-ce que x est strictement supérieur à y ? |
@@ -305,16 +223,16 @@ Structure d'un package python (dans le même dossier que le programme):
 
 ### Logical Comparison
 
-| Opérateur | Exemple | Signification |
-|:---------:|:-------:|-----------------------------------------------------------------|
+| Opérateur | Exemple | Signification                                                    |
+|:---------:|---------|------------------------------------------------------------------|
 |    and    | P and Q |                       Est-ce que P et Q sont toutes deux vraie ? |
 |     or    |  P or Q | Est-ce que au moins une des expressions parmi P et Q est vraie ? |
 |    not    |  not P  |                                    La négation de l'expression P |
 
 ### Membership
 
-| Expression | Exemple | Signification |
-|:----------:|:-----------------------:|-----------------------------------------|
+| Expression | Exemple                 | Signification                           |
+|:----------:|-------------------------|-----------------------------------------|
 | in         | "France" in extrait     | return true if France is in extrait     |
 | not in     | "France" not in extrait | return true if France is not in extrait |
 
@@ -682,6 +600,54 @@ while True:
 
 ## POO
 
+### Concepts
+
+**Generics**
+
+- classe
+- constructor
+- getter and setter
+- encapsulation (_ and __ are protected prefix or private but all is public in reality)
+- héritage (multiple)
+- surcharge de méthode
+- polymorphisme
+- interface
+- collections d'objet
+- erreur
+
+**Python**
+
+- attribut de classe/instance
+- decorateurs
+- methode de classe/instance/statique (@classmethod)
+- propiété (@property) (getter et setter)
+
+**Best Practices**
+
+- TDD
+- Design Patterns
+- SOLID
+- Single responsibility
+- Chaque classe ou fonction doit faire une seule chose
+- Open/Closed
+- Les classes doivent être ouvertes à l’extension, mais fermées à la modification.
+- Liskov
+- Les sous-classes doivent pouvoir faire tout ce que font leurs classes parentes
+- Interface Segregation
+- responsabilité unique, appliqué aux interfaces.
+- Dependency Inversion
+- Les classes parentes ne doivent pas avoir à changer lorsque l’une de leurs sous-classes est modifiée.
+
+**Avoid**
+
+- STUPID
+- Singleton.
+- Couplage fort (« Tight coupling »).
+- Non-testabilité (« Untestability »).
+- Optimisation prématurée (« Premature optimization »).
+- Nommage non descriptif (« Indescriptive naming »).
+- Duplication.
+
 ### Class Definition
 
 ```python
@@ -730,7 +696,8 @@ help(Car)
 
 ```
 
-### heritage
+### Heritage
+
 ```python
 class Vehicule: 
     def __init__(self, a, b = []):
@@ -746,7 +713,9 @@ class Moto(Vehicule): # heritate from Vehicule
         self.passengers = b
         self.brand = c
 ```
-## polymorphism
+
+### Polymorphism
+
 ```python
 class Vehicule: 
     def __init__(self, a, b = []):
@@ -768,11 +737,12 @@ class Moto(Vehicule):
             print('Il reste', self.seats - len(self.passengers), 'places')
         else:
             print("Le véhicule est rempli")
-
 ```
 
-## built_in
-https://docs.python.org/3/library/functions.html
+### Built in Functions
+
+[Python Doc](https://docs.python.org/3/library/functions.html)
+
 ```python
 all(iterable)                                   # Return True if all elements of the iterable are true (or if the iterable is empty)
 any(iterable)                                   # Return True if any element of the iterable is true. If the iterable is empty, return False.
@@ -789,32 +759,29 @@ open(file, mode='r',...)                        #
 pow(base, exp[,mod])                            # Return base to the power exp; if mod is present, return base to the power exp, modulo mod (computed more efficiently than pow(base, exp) % mod)
 zip(*iterables, strict=False)                   # Iterate over several iterables in parallel, producing tuples with an item from each one
 
-
-
-
 '__class__',
- '__delattr__',
- '__dir__',
- '__doc__',
- '__eq__',
- '__format__',
- '__ge__',
- '__getattribute__',
- '__gt__',
- '__hash__',
- '__init__',
- '__init_subclass__',
- '__le__',
- '__lt__',
- '__ne__',
- '__new__',
- '__reduce__',
- '__reduce_ex__',
- '__repr__',
- '__setattr__',
- '__sizeof__',
- '__str__',                                     # when own class : better than method like afficher() 
- '__subclasshook__'
+'__delattr__',
+'__dir__',
+'__doc__',
+'__eq__',
+'__format__',
+'__ge__',
+'__getattribute__',
+'__gt__',
+'__hash__',
+'__init__',
+'__init_subclass__',
+'__le__',
+'__lt__',
+'__ne__',
+'__new__',
+'__reduce__',
+'__reduce_ex__',
+'__repr__',
+'__setattr__',
+'__sizeof__',
+'__str__',                                     # when own class : better than method like display() 
+'__subclasshook__'
 
 # redefine built-in
 Class Complexe:
@@ -829,21 +796,20 @@ Class Complexe:
 z1 = Complexe(3,4)
 z2 = Complexe(2,-5)
 print(z1<z2)                                    # prints True
-
 ```
-## decorators
 
-### predefined decorators
+### Decorators
+
+Predefined Decorators
+
 ```python
 @functools.wrap(func)                           # keep properties with func
 @functools.lru_cache()                          # speed up execution time
-
-
-
 ```
-### function with **no arguments** and **return nothing**
-```python
 
+Decorator with **no arguments** and **return nothing**
+
+```python
 def do_twice(func):
     def wrapper_do_twice():
         func()
@@ -857,13 +823,12 @@ def say_whee():
 # results ############################################# 
 # Whee!
 # Whee!
-
 ```
 
 
-### function with **arguments** and **return nothing**
-```python
+Decorator with **arguments** and **return nothing**
 
+```python
 def do_twice(func):
     def wrapper_do_twice(*args, **kwargs):              # *args, **kwargs added
         func(*args, **kwargs)                           # *args, **kwargs added
@@ -879,10 +844,10 @@ greet("World")
 # results ############################################# 
 # Hello World
 # Hello World
-
 ```
 
-### function with **arguments** and **return something**
+Decorator with **arguments** and **return something**
+
 ```python
 
 def do_twice(func):
@@ -902,12 +867,11 @@ return_greeting("Adam")
 # Creating greeting
 # Creating greeting
 # 'Hi Adam'                                             # return value of the last execution sent
-
 ```
 
-### decorators with **arguments**
-```python
+Decorator with **arguments**
 
+```python
 def repeat(num_times):
     def decorator_repeat(func):
         @functools.wraps(func)
@@ -931,7 +895,7 @@ greet("World")
 # Hello World
 ```
 
-### decorators **chained**
+Decorator **chained**
 ```python
 
 def print_before_execution(function):
@@ -959,7 +923,7 @@ print_hello_world()
 # La fonction a fini de tourner
 ```
 
-## threading
+### Threading
 ```python
 from threading import Thread
 
@@ -968,16 +932,16 @@ def calcul(x):
 
 th=Thread(target=calcul,args=(5,))                  # create thread
 th.start()                                          # start thread 
-th.join()                                           # complétion of thread
-    
+th.join()                                           # completion of thread
 ```
 
-## multiprocessing
+### Multiprocessing
 ```python
 from multiprocessing import Pool
 
 def f(x):
     return x*x
+
 if __name__ == '__main__':
     with Pool(5) as p:                              # number of process (max ~ 60x Windows)
         print(p.map(f, [1, 2, 3]))                  # apply f to 1, 2 and 3 on 5 processes      
@@ -989,77 +953,29 @@ from multiprocessing import Process
 
 def f(name):
     print('hello', name)
+
 if __name__ == '__main__':
     p = Process(target=f, args=('bob',))
     p.start()
     p.join()
 ```
 
-## coroutines/asynchrone
+### Coroutines
 
 ```python
-asyncio.run(func())                                 # run coroutine func() This function 
-                                                    # always creates a new event loop and closes it at the end. 
+asyncio.run(func())                                 # run coroutine func() 
+                                                    # This function always creates a new event loop and closes it at the end. 
                                                     # It should be used as a main entry point for asyncio programs, 
                                                     # and should ideally only be called once
 
 await func()                                        # run coroutine in Jupyter Notebook
-await asyncio.gather(nom_async('Daniel'),           # gather async function and run them with await
-                     nom_async('Donna'),            # result is an aggregate list of returned values
-                     nom_async('Diane'))
+await asyncio.gather(name_async('Daniel'),          # gather async function and run them with await
+                     name_async('Donna'),           # result is an aggregate list of returned values
+                     name_async('Diane'))
 
 asyncio.ensure_future(name_async())                 # create task for concurrency
 asyncio.create_task(name_async())                   # create task for concurrency (preferred way)
-
-
 ```
-
----
-# POO CONCEPTS
-
-### GENERIQUE
-- classe
-- constructeur
-- getter et setter
-- encapsulation (_ et __ préfixe protégé ou privé mais tout est public en vrai)
-- héritage (multiple)
-- surcharge de méthode
-- polymorphisme
-- interface
-- collections d'objet
-- erreur
-
-### PYTHON
-- attribut de classe/instance
-- decorateurs
-- methode de classe/instance/statique (@classmethod)
-- propiété (@property) (getter et setter)
-
-### BONNES PRATIQUES
-- TDD
-- Design Patterns
-- SOLID
-- Single responsibility
-- Chaque classe ou fonction doit faire une seule chose
-- Open/Closed
-- Les classes doivent être ouvertes à l’extension, mais fermées à la modification.
-- Liskov
-- Les sous-classes doivent pouvoir faire tout ce que font leurs classes parentes
-- Interface Segregation
-- responsabilité unique, appliqué aux interfaces.
-- Dependency Inversion
-- Les classes parentes ne doivent pas avoir à changer lorsque l’une de leurs sous-classes est modifiée.
-
-### A EVITER
-- STUPID
-- Singleton.
-- Couplage fort (« Tight coupling »).
-- Non-testabilité (« Untestability »).
-- Optimisation prématurée (« Premature optimization »).
-- Nommage non descriptif (« Indescriptive naming »).
-- Duplication.
-
----
 
 # TESTS
 

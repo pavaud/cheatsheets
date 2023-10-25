@@ -1,11 +1,17 @@
 site_name: Cheat Sheets
+
 theme:
   name: material
   features:
     - navigation.tabs
-    - navigation.sections
-    - toc.integrate
+    - navigation.tabs.sticky
+    # - navigation.sections
+    - navigation.expand
+    - navigation.path
+    # - toc.integrate
+    - toc.follow
     - navigation.top
+    - navigation.tracking
     - search.suggest
     - search.highlight
     - content.tabs.link
@@ -17,20 +23,35 @@ theme:
         icon: material/toggle-switch-off-outline 
         name: Switch to dark mode
       primary: teal
-      accent: purple 
+      accent: deep purple 
     - scheme: slate 
       toggle:
         icon: material/toggle-switch
         name: Switch to light mode    
       primary: teal
-      accent: purple
+      accent: deep purple
+  icon:
+    admonition:
+      note: octicons/tag-16 
 
+# Extensions
 markdown_extensions:
   - pymdownx.highlight:
       linenums: true
   # - pymdownx.inlinehilite
   # - pymdownx.snippets
-  # - admonition
+  - admonition
   # - pymdownx.arithmatex:
   #     generic: true
   - pymdownx.superfences
+
+# Page tree
+nav:
+  - Home: index.md
+  - Python:
+    - Installation: python/installation.md
+    - Environment: python/environment.md
+    - Create an Executable: python/executable.md
+    - Project Structure: python/project.md
+  - SQL:
+    - Basics: sql/basics.md
