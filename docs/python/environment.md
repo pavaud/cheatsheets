@@ -1,10 +1,5 @@
 # Environment
 
-
-!!! Note "example title"
-
-    this is an introductory note
-
 ## Install Packages with `pip`
 
 ```bash

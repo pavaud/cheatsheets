@@ -1,5 +1,9 @@
 site_name: Cheat Sheets
 
+# Copyright
+copyright: Copyright &copy; 2023 Philippe Vaudin
+
+# Configuration
 theme:
   name: material
   features:
@@ -8,14 +12,16 @@ theme:
     # - navigation.sections
     # - navigation.expand
     - navigation.path
-    # - toc.integrate
-    - toc.follow
     - navigation.top
     - navigation.tracking
+    - navigation.footer
+    # - navigation.indexes
+    # - toc.integrate
+    - toc.follow
     - search.suggest
     - search.highlight
     - content.tabs.link
-    - content.code.annotation
+    - content.code.annotate
     - content.code.copy
   palette:
     - scheme: default
@@ -30,9 +36,10 @@ theme:
         name: Switch to light mode    
       primary: teal
       accent: deep purple
-  icon:
-    admonition:
-      note: octicons/tag-16 
+  # icon:
+  #   admonition:
+  #     note: octicons/tag-16
+
 # Repository
 repo_name: pavaud/cheatsheets
 repo_url: https://github.com/pavaud/cheatsheets
@@ -53,6 +60,7 @@ nav:
   - Home: index.md
   - Python:
     - Installation: python/installation.md
+    - Best Practices: python/best_practices.md
     - Environment: python/environment.md
     - Create an Executable: python/executable.md
     - Project Structure: python/project.md
