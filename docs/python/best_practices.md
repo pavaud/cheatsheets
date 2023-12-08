@@ -99,7 +99,7 @@ dict1 = {"key1": val , "key2": 3}
 ## Naming Conventions
 
 - Use **descriptive names** for variables, functions, and modules.
-- Use `snake_case` for **function** names and **variable** names.
+- Use `snake_case` for **function** and **variable** names.
 - Use `CamelCase` for **class** names.
 - Use `UPPER_CASE` for **constants** names.
 
