@@ -52,9 +52,12 @@ my_long_variable_name = some_function_with_a_long_name(
 
 ## Imports
 
-- Imports should be on separate lines.
-- Imports should usually be grouped in the following order: standard library imports, related third-party imports, and local application/library specific imports.
-- Avoid wildcard imports (`from module import *`), it makes it unclear which names are present in the namespace.
+- Imports should be on **separate lines**.
+- Imports should usually be grouped in the following order: 
+    - standard library.
+    - third-party imports.
+    - local application/library specific.
+- **Avoid wildcard** imports (`from module import *`), it makes it unclear which names are present in the namespace.
 
 **Bad:**
 ```python
