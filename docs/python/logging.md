@@ -3,10 +3,12 @@
 ## Purpose of logging
 
 There is 2 main goals in logging :
+
 - **Diagnosis** : records events related to the operations of an application
 - **Audit** : records events for business analysis.
 
 The Python `logging` library is a convenient way to do so. It has a number of advantages over printing :
+
 - Easy to see **where and when** (even what line no.) a logging call is being made from.
 - You can log to `files`, `sockets`, pretty much anything, all **at the same time**.
 - You can differentiate your logging based on **severity** levels.
@@ -17,19 +19,20 @@ The Python `logging` library is a convenient way to do so. It has a number of ad
 
 | Level | When it’s used |
 | --- | --- |
-| DEBUG | Detailed information, typically of interest only when diagnosing problems. |
-| INFO | Confirmation that things are working as expected. |
-| WARNING | An indication that something unexpected happened, or indicative of some problem in the near future (e.g. ‘disk space low’). The software is still working as expected. |
-| ERROR | Due to a more serious problem, the software has not been able to perform some function. |
-| CRITICAL | A serious error, indicating that the program itself may be unable to continue running. |
+| `DEBUG` | Detailed information, typically of interest only when diagnosing problems. |
+| `INFO` | Confirmation that things are working as expected. |
+| `WARNING` | An indication that something unexpected happened, or indicative of some problem in the near future (e.g. ‘disk space low’). The software is still working as expected. |
+| `ERROR` | Due to a more serious problem, the software has not been able to perform some function. |
+| `CRITICAL` | A serious error, indicating that the program itself may be unable to continue running. |
 
 ## Logger configuration
 
-3 methods to configure a logger in Python
+There are 3 methods to configure a logger in Python :
+
 - `INI` file :
     - Pros : change the config during the execution.
     - Cons : less control.
-- Using a `Dict` or `JSON` formatted file :
+- Using a Python `Dict` or `JSON` formatted file :
     - Pros : change the config during the execution 
     - Cons : less control than with code.
 - Directly with **code** : 
@@ -106,7 +109,7 @@ logger.debug('often makes a very good meal of %s', 'visiting tourists')
 
 ### Code
 
-```python title:"app.py"
+```python title="app.py"
 import logging
 
 logger = logging.getLogger()
@@ -120,7 +123,8 @@ logger.debug('often makes a very good meal of %s', 'visiting tourists')
 ```
 
 For simple configuration needs, we can use the `basicConfig()` function.
-```python
+
+```python title="app.py"
 import logging
 
 logging.basicConfig(
@@ -143,9 +147,10 @@ logging.info("Opening file...")
 logging.error("File doesn't exists")
 ```
 
-## Format the log records
+## Log records format
 
-For the above format 
+For the above format
+
 ```python
 "[%(asctime)s] %(levelname)-7s %(module)-15s %(lineno)-5d : %(message)s" 
 ```
