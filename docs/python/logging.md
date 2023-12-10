@@ -2,20 +2,21 @@
 
 ## Purpose of logging
 
-There is 2 main goals in logging :
+There are 2 main goals in logging :
 
 - **Diagnosis** : records events related to the operations of an application
 - **Audit** : records events for business analysis.
 
-The Python `logging` library is a convenient way to do so. It has a number of advantages over printing :
+The Python [`logging`](https://docs.python.org/3/library/logging.ht) library is a convenient way to do so. It has a number of advantages over printing :
 
-- Easy to see **where and when** (even what line no.) a logging call is being made from.
+- Easy to see **where** and **when** (even what line no.) a logging call is being made from.
 - You can log to `files`, `sockets`, pretty much anything, all **at the same time**.
-- You can differentiate your logging based on **severity** levels.
+- You can differentiate your logging based on **severity levels**.
 - If your project is meant to be **imported by other python tools**, it's bad practice for your package to print things to stdout, since the user likely won't know where the print messages are coming from. With logging, users of your package can choose whether they want to propogate logging messages from your tool or not.
 
+For more details about logging, please see basic and advanced tutorials [here](https://docs.python.org/3/howto/logging.html)
 
-## Levels
+## Severity Levels
 
 | Level | When it’s used |
 | --- | --- |
