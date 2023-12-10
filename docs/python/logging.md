@@ -67,7 +67,7 @@ args=(sys.stderr,)
 format=%(asctime)s %(name)-12s %(levelname)-8s %(message)s
 ```
 
-Then use logging.config.fileConfig() in the code:
+Then use `logging.config.fileConfig()` in the code:
 
 ```python title="app.py"
 import logging
