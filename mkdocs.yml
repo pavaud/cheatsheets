@@ -64,5 +64,6 @@ nav:
     - Environment: python/environment.md
     - Create an Executable: python/executable.md
     - Project Structure: python/project.md
+    - Logging: python/logging.md
   - SQL:
     - Basics: sql/basics.md
