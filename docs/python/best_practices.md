@@ -13,6 +13,56 @@
     
     Here are some best practices to keep in mind.
 
+## Virtual Environments
+
+Recommended to isolate project. It lets you have a stable, reproducible, and portable environment.
+Benefits of using virtual environments include :
+
+- Avoid system pollution
+- Avoid Dependency Conflicts
+- Minimize reproducibility issues
+- Avoid installation privilege lockouts
+
+There are many ways of creating a virtual environment (see the Environment section for more details) 
+The most common one is by using `venv` module.
+
+```bash
+# go under the project directory
+cd <project_directory>
+
+# create a virtual environment usually named env, venv or .venv
+python -m venv .venv
+```
+It creates a `.venv` folder at the root of your project.
+
+!!! Note
+    The `.venv` folder stores all the packages you will install, hence increasing the byte size of the project.
+    If your using a `git` repository to store your project, make sure to create or update the `.gitignore` file to include the `.venv` folder. 
+
+Then activate the environment. it will add a `(.venv)` extension at the beginning of your prompt in the terminal
+
+```bash
+# windows
+.\.venv\Scripts\Activate.ps1
+
+# linux
+./.venv/bin/activate
+```
+
+When you install package using `pip`, it will use the `pip` program from the `.venv` folder.
+After you're done with installing packages, run the following command to make a snapshot of your depencies.
+
+```bash
+pip freeze > requirements.txt
+```
+
+It will create a `requirements.txt` file containing all your installed packages.
+That way, when you need to clone the project to another computer from a `git` repository, install the dependencies with
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Indentation
 
 - Use 4 spaces per indentation level.
